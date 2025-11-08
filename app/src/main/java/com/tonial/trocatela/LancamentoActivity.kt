@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.EditText
 import androidx.activity.enableEdgeToEdge
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 
 class LancamentoActivity : AppCompatActivity() {
@@ -31,5 +32,15 @@ class LancamentoActivity : AppCompatActivity() {
         startActivity(intent)
     }
 
-    fun btnListarClick(view: View) {}
+    fun btnListarClick(view: View) {
+        val intent = Intent(this, ListarActivity::class.java)
+        getResult.launch(intent)
+        //startActivity(intent)
+    }
+
+    private val getResult = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
+        if(it.resultCode == RESULT_OK){
+            etCod.setText(it.data?.getIntExtra("cod", 0).toString())
+        }
+    }
 }
