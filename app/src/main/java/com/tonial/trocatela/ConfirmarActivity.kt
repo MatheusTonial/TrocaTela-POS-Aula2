@@ -7,8 +7,6 @@ import android.view.View
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 
 class ConfirmarActivity : AppCompatActivity() {
 
@@ -36,7 +34,7 @@ class ConfirmarActivity : AppCompatActivity() {
     }
 
     fun btnConfirmarSMSOnClick(view: View) {
-        val sms = "Cod: ${tvCod.text} Qtd: ${tvQtd.text} Valor: ${tvValor.text}";
+        val sms = "Cod: ${tvCod.text} Qtd: ${tvQtd.text} Valor: ${tvValor.text}"
 
         val intent = Intent(Intent.ACTION_VIEW)
 
